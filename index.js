@@ -4,8 +4,15 @@ const { createClient } = require('@supabase/supabase-js');
 const nodemailer = require('nodemailer');
 const { v4: uuidv4 } = require('uuid');
 const dayjs = require('dayjs');
+const cors = require('cors');
 
 const app = express();
+
+// app.use(cors({
+// }));
+
+app.use(cors());
+
 app.use(express.json());
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
@@ -174,3 +181,10 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
+
+
+
+//git config --global user.name "Aditya Ingale"
+// git config --global user.email "adiingale1814@gmail.com"
